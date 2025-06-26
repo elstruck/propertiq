@@ -1239,9 +1239,11 @@ export const mockListings: PropertyListing[] = [
 ];
 
 // Function to generate mock scored listings based on buy box criteria
-export function generateMockScoredListings(buyBoxCriteria?: BuyBoxCriteria): ScoredListing[] {
+export function generateMockScoredListings(buyBoxCriteria: BuyBoxCriteria): ScoredListing[] {
   // PROTOTYPE MODE: Just return a good variety of properties with basic scoring
   // Skip complex filtering for now to ensure we always show results
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _ = buyBoxCriteria; // Acknowledge parameter but don't use it in prototype mode
   let filteredListings = [...mockListings];
   
   // For prototype: just take a variety of properties across different price ranges
