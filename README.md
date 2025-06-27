@@ -147,11 +147,52 @@ Based on the total score:
 
 ## Deployment
 
-The app is designed for deployment on DigitalOcean App Platform:
+### Firebase App Hosting (Recommended)
+
+The app is configured for Firebase App Hosting with automatic deployments:
+
+1. **Quick Setup** (recommended):
+   ```bash
+   ./setup-firebase-hosting.sh
+   ```
+   
+   Or **Manual Setup**:
+   ```bash
+   firebase apphosting:backends:create --project YOUR_PROJECT_ID
+   ```
+
+2. **Configure Environment Variables**:
+   - Environment variables are configured in `apphosting.yaml`
+   - Update the values in `apphosting.yaml` with your actual Firebase configuration:
+     ```yaml
+     env:
+       - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+         value: "your-actual-api-key"
+         availability: [BUILD, RUNTIME]
+       # ... other variables
+     ```
+
+3. **Deploy**:
+   - Push to your connected GitHub branch
+   - Firebase App Hosting will automatically build and deploy
+   - Your app will be available at your assigned Firebase App Hosting URL
+
+### Alternative: DigitalOcean App Platform
 
 1. Connect your GitHub repository
 2. Set environment variables in the App Platform dashboard
 3. Deploy with automatic builds on push
+
+### Environment Variables for Production
+
+For Firebase App Hosting, configure these in `apphosting.yaml`:
+- `NEXT_PUBLIC_FIREBASE_API_KEY`
+- `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
+- `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
+- `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
+- `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+- `NEXT_PUBLIC_FIREBASE_APP_ID`
+- `MVP_MODE` (set to "false" for production)
 
 ## Contributing
 
