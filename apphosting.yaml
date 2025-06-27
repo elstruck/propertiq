@@ -1,0 +1,48 @@
+# Firebase App Hosting configuration for ProperTiQ
+# This file configures environment variables for production deployment
+
+# Environment variables configuration
+env:
+  # Firebase configuration (public variables accessible in browser)
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: "AIzaSyDprBIjQ6Lv4W_w-Dy-9ydbPg78HuQwtCA"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: "propertiq-7720a.firebaseapp.com"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: "propertiq-7720a"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: "propertiq-7720a.firebasestorage.app"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "1067689806404"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: "1:1067689806404:web:b320574202810d8c9b4a11"
+    availability:
+      - BUILD
+      - RUNTIME
+
+  # Application configuration - set to false for production
+  - variable: MVP_MODE
+    value: "false"
+    availability:
+      - BUILD
+      - RUNTIME 

@@ -33,8 +33,6 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# Firebase App Hosting config with real credentials
-apphosting.yaml
 
 # vercel
 .vercel
